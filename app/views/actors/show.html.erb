@@ -20,9 +20,9 @@
       <dt> Filmography </dt>
       <dd>
         <ul>
-          <% Character.where(:actor_id =>@actor.id).each do |character| %>
+          <% @actor.character.each do |character| %>
           <li>
-            <a href = "/movies/<%=character.movie_id%>"><%= Movie.find_by(:id => character.movie_id).title %> </a>
+            <a href = "/movies/<%=character.movie_id%>"><%= character.movie.title %> </a>
             (<a href = "/characters/<%=character.id%>"><%= character.name %>) </a>
           </li>
           <% end %>

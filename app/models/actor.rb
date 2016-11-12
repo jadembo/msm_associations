@@ -8,4 +8,7 @@ validates :name, :presence => true, :uniqueness => {:scope => :dob}
 
 #- image_url: no rules
 
+has_many(:character, :class_name => "Character", :foreign_key => "actor_id")
+
+
 end
